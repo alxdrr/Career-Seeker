@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="{{ asset('img/Logo.png') }}" />
+    <link rel="icon" href="{{ asset('img/titleLogo.png') }}" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -20,7 +20,9 @@
       rel="stylesheet"
     />
     <script src="jquery-3.6.3.min.js"></script>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}" />
     <title>Career Seeker</title>
   </head>
 
@@ -49,13 +51,13 @@
               <a class="nav-link" aria-current="page" href="">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="search.html">Search</a>
+              <a class="nav-link" href="search">Search</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="vacancy.html">Vacancy</a>
+              <a class="nav-link" href="vacancy">Vacancy</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="career-tips.html">Career Tips</a>
+              <a class="nav-link" href="career-tips">Career Tips</a>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -74,7 +76,8 @@
             </li>
           </ul>
         </div>
-        <a href="login">
+        
+        <a href="login" class="login">
           <button type="button" id="btn-signin">
             Sign In
             <div class="arrow-wrapper">
@@ -171,7 +174,7 @@
           </div>
         </div>
         <div class="card comp-2" style="width: 346px">
-          <img src="{{ asset('img/comp-1.png') }}" class="card-img-top" alt="..." />
+          <img src="{{ asset('img/comp-2.png') }}" class="card-img-top" alt="..." />
           <div class="card-body">
             <div class="card-desc">
               <h1 class="card-title" style="color: #2d3648; font-size: 20px">
@@ -296,29 +299,58 @@
 
     <script>
       function setActiveNavbar() {
+        var links = document.querySelectorAll('.nav-link');
+        var underline = document.querySelector(".navbar-nav .nav-item:nth-child(1)");
         var currentLocation = window.location.href;
-        var homeLink = document.querySelector(
-          ".navbar-nav .nav-item:nth-child(1) .nav-link"
-        );
-        var link = document.querySelector(".navbar-nav .nav-item:nth-child(1)");
-        if (currentLocation.indexOf("home") !== -1) {
-          homeLink.classList.add("active");
-          link.classList.add("active");
-        }
+        
+        links.forEach(link => {
+          var href = link.getAttribute('href');
+          if (currentLocation.indexOf(href) !== -1) {
+            console.log("excuted!")
+            link.classList.add("active");
+            link.parentNode.classList.add("active");
+          }
+          console.log(href);
+        });
+
       }
 
       setActiveNavbar();
-
       const navbar = document.querySelector(".navbar");
+      const toggleNavbar = document.querySelector(".navbar-nav");
+      const toggler = document.querySelector(".navbar-toggler");
+      let screenWidth = window.innerWidth;
 
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > navbar.offsetHeight) {
-          navbar.classList.add("navbar-scrolled");
+      function resizeNav() {
+        if (screenWidth < 992) {
+          toggleNavbar.classList.remove('show');
+        } else {
+          toggleNavbar.classList.add('show');
         }
-        if (window.scrollY === 0) {
-          navbar.classList.remove("navbar-scrolled");
-        }
+      }
+
+      toggler.addEventListener("click", () => {
+        toggleNavbar.classList.toggle("show");
       });
+
+      window.addEventListener('DOMContentLoaded', resizeNav);
+      window.addEventListener('resize', () => {
+        screenWidth = window.innerWidth;
+        resizeNav();
+      });
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > navbar.offsetHeight) {
+    navbar.classList.add("navbar-scrolled");
+  }
+  if (window.scrollY === 0) {
+    navbar.classList.remove("navbar-scrolled");
+  }
+});
+
+
+      window.addEventListener('DOMContentLoaded', resizeNav);
+      window.addEventListener('resize', resizeNav);
     </script>
   </body>
 </html>

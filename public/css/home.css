@@ -18,6 +18,7 @@
 
 a {
     text-decoration: none;
+    color: white;
     border: 0;
     outline: 0;
 }
@@ -71,82 +72,11 @@ ul {
     line-height: 120%;
     color: #004651;
 }
-/* ======================================= navbar =======================================*/
-.navbar.navbar-expand-lg {
-    position: fixed;
-    top: 0;
-    height: 120px;
-    width: 100%;
-    z-index: 2;
-    padding: 0;
-    transition: all 0.5s ease;
-}
-
-.nav-item .nav-link {
-    color: #717d96;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 24px;
-    transition: all 0.2s;
-}
-
-.nav-link:hover {
-    transform: scale(1.1);
-    color: #0f6900;
-    transition: all 0.2s;
-}
-
-.nav-item .nav-link.active {
-    color: #0f6900;
-}
-
-.nav-item.active {
-    border-bottom: 3px solid #0f6900;
-    border-radius: 4px;
-}
-
-.nav.container-xxl {
-    width: 100vw;
-    height: 20vh;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-between;
-    padding: 0px 56px;
-}
-
-#navbarNav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0px;
-}
-
-.navbar-nav {
-    gap: 2vw;
-}
-
-.navbar-scrolled {
-    background: radial-gradient(
-        90.7% 560.31% at 95.66% 11.65%,
-        #259f46 0%,
-        #c3f6d7 19.42%,
-        #c3f6d7 89.87%,
-        #a4e473 100%
-    );
-    box-shadow: var(--shadow-lg);
-    transition: all 0.5s ease;
-}
 
 /* ======================================= hero =======================================*/
 .hero.container-fluid {
     z-index: 1;
-    margin-top: 30vh;
+    margin-top: 260px;
     display: flex;
     flex-direction: column;
     padding: 0px;
@@ -157,7 +87,7 @@ ul {
 
 .hero-text {
     width: 600px;
-    height: 260px;
+    height: auto;
 
     font-family: "Inter";
     font-style: normal;
@@ -175,11 +105,22 @@ ul {
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+
+/* Login Page Hero */
+.hero.container-fluid a{
+    align-self: self-start;
+}
+.hero.container-fluid .form img {
+    scale: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /* ======================================= web-description =======================================*/
 .web-description {
     display: flex;
     flex-direction: column;
-    padding: 0 76px;
+    padding: 0 120px;
     gap: 46px;
 }
 
@@ -220,54 +161,7 @@ ul {
     justify-content: center;
 }
 
-/* ======================================= footer =======================================*/
 
-.footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position: static;
-
-    padding: 56px 71px;
-
-    background-color: var(--primary-color);
-    height: 333px;
-    color: var(--secondary-color);
-    font: var(--primary-font);
-    font-weight: 700;
-    font-size: 16;
-    bottom: 0;
-}
-
-#connect,
-#explore,
-#support,
-#copyright {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-#connect .social-icon {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-}
-
-.navigation {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    font-weight: 500;
-}
-
-#copyright {
-    display: flex;
-    flex-direction: column;
-    gap: 68px;
-    font-weight: 500;
-    color: white;
-}
 /* ======================================= button =======================================*/
 
 #btn-signin {
@@ -371,7 +265,7 @@ a:focus {
     --hover-color: var(--primary-color);
     --arrow-width: 10px;
     --arrow-stroke: 2px;
-    border: solid var(--primary-color);
+    border: 2px solid var(--primary-color);
     box-sizing: border-box;
     border-radius: 20px;
     color: var(--primary-color);
@@ -476,7 +370,7 @@ a:focus {
     top: 0;
     z-index: -1;
     position: absolute;
-    height: 100vh;
+    height: 920px;
     width: 100%;
     clip-path: polygon(0 0, 100% 0%, 100% 30%, 0% 80%);
     background: radial-gradient(
@@ -492,7 +386,7 @@ a:focus {
     top: 740px;
     z-index: -1;
     position: absolute;
-    height: 85vh;
+    height: 720px;
     width: 100%;
     clip-path: polygon(100% 100%, 0 100%, 0 70%, 100% 20%);
     background: radial-gradient(
@@ -502,6 +396,22 @@ a:focus {
         #c3f6d7 89.87%,
         #a4e473 100%
     );
+}
+
+#nav-bg {
+    position: absolute;
+    width: 100vw;
+    height: 120px;
+    top: 0;
+    z-index: 2;
+    background: radial-gradient(
+            90.7% 2299.28% at 95.66% 47.81%,
+            #259f46 0%,
+            #c3f6d7 19.42%,
+            #c3f6d7 89.87%,
+            #a4e473 100%
+        )
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
 }
 
 /* ======================================= template =======================================*/
@@ -590,3 +500,4 @@ input:not(:placeholder-shown) ~ .reset {
     visibility: visible;
 }
 /* sizing svg icons */
+/* ======================================= responsive =======================================*/
