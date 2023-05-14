@@ -1,3 +1,4 @@
+@import url('root.css');
 /* ======================================= navbar =======================================*/
 .navbar.navbar-expand-lg {
     position: fixed;
@@ -122,3 +123,22 @@
         padding: 0px 16px;
     }
 }
+/* ======================================= material icons =======================================*/
+.profile.collapse.show{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: all 0.2s;
+}
+.profile.collapse.show:hover{
+    scale: 1.1;
+    transition: all 0.2s;
+    color: var(--primary-hover-color);
+}
+.material-icons.md-48 { 
+    font-size: 48px; 
+}
+

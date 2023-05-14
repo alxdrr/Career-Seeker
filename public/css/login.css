@@ -1,4 +1,3 @@
-
 .home {
     position: relative;
     display: flex;
@@ -41,22 +40,28 @@
     width: 738px;
 }
 
-.hero-text {
-    width: 600px;
-    height: auto;
+.hero.container-fluid .form{
+    display: flex;
+    flex-direction: column;
+}
 
-    font-family: "Inter";
+.hero-text {
+    width: 198px;
+    height: 86px;
+    
+    
+    /* Heading XXL */
+    
+    font-family: 'Inter';
     font-style: normal;
-    font-weight: 800;
+    font-weight: 700;
     font-size: 72px;
     line-height: 120%;
-
-    background: linear-gradient(
-        90deg,
-        #2d3648 16.39%,
-        #0f6900 48.82%,
-        #a4e473 92.79%
-    );
+    /* or 67px */
+    
+    letter-spacing: 0.01em;
+    
+    background: linear-gradient(90deg, #2D3648 16.39%, #0F6900 48.82%, #A4E473 92.79%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -72,156 +77,19 @@
     align-items: center;
     justify-content: center;
 }
-/* ======================================= web-description =======================================*/
-.web-description {
-    display: flex;
-    flex-direction: column;
-    padding: 0 120px;
-    gap: 46px;
-}
-
-.text-image {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-.text-image .text-desc {
-    width: 50vw;
-    line-height: 200%;
-}
-/* ======================================= top company =======================================*/
-
-.top-comp {
-    display: flex;
-    flex-direction: column;
-    gap: 46px;
-}
-
-.top-comp .text-title {
-    display: flex;
-    justify-content: center;
-}
-
-.top-comp .comp-explore {
-    display: flex;
-    justify-content: end;
-    padding: 0px 15vw;
-}
-
-.comp-cards {
-    display: flex;
-    flex-direction: row;
-    gap: 46px;
-    justify-content: center;
-}
-
 
 /* ======================================= button =======================================*/
-
-#btn-signin {
-    --primary-color: #0f6900;
-    --secondary-color: #fff;
-    --hover-color: #1069009c;
-    --arrow-width: 10px;
-    --arrow-stroke: 2px;
-    box-sizing: border-box;
-    border: 0;
-    border-radius: 20px;
-    color: var(--secondary-color);
-    padding: 1em 1.8em;
-    background: var(--primary-color);
-    display: flex;
-    transition: 0.2s background;
-    align-items: center;
-    gap: 0.6em;
-    font-weight: bold;
-
-    border-radius: 30px;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 24px;
-    box-shadow: var(--shadow-lg);
+.btn-login{
+    width: 100%;
 }
-a:focus {
-    outline: dotted 2px #666;
-}
-#btn-signin .arrow-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#btn-signin .arrow {
-    margin-top: 1px;
-    width: var(--arrow-width);
-    background: var(--primary-color);
-    height: var(--arrow-stroke);
-    position: relative;
-    transition: 0.2s;
-}
-
-#btn-signin .arrow::before {
-    content: "";
-    box-sizing: border-box;
-    position: absolute;
-    border: solid var(--secondary-color);
-    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
-    display: inline-block;
-    top: -3px;
-    right: 3px;
-    transition: 0.2s;
-    padding: 3px;
-    transform: rotate(-45deg);
-}
-
-#btn-signin:hover {
-    background-color: var(--hover-color);
-    color: #e3ebde;
-}
-
-#btn-signin:hover .arrow {
-    background: var(--secondary-color);
-}
-
-#btn-signin:hover .arrow:before {
-    right: 0;
-}
-
-#btn-comp-card {
-    box-sizing: border-box;
-    border: 0;
-    border-radius: 20px;
-
-    padding: 1em 1.8em;
-    background: var(--secondary-color);
-    display: flex;
-    transition: 0.2s background;
-    align-items: center;
-    gap: 0.6em;
-    font-weight: bold;
-
-    border-radius: 6px;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 24px;
-    box-shadow: var(--shadow-lg);
-}
-
-#btn-explore {
+#btn-login {
     --prim-color: #ffffff;
     --secondary-color: var(--prim-color);
     --hover-color: var(--primary-color);
     --arrow-width: 10px;
     --arrow-stroke: 2px;
-    border: 2px solid var(--primary-color);
+    width: 100%;
+    border: 1px solid var(--primary-color);
     box-sizing: border-box;
     border-radius: 20px;
     color: var(--primary-color);
@@ -230,6 +98,7 @@ a:focus {
     display: flex;
     transition: 0.2s background;
     align-items: center;
+    justify-content: center;
     gap: 0.6em;
     font-weight: bold;
 
@@ -238,20 +107,20 @@ a:focus {
     font-family: "Inter";
     font-style: normal;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 24px;
-    box-shadow: var(--shadow-lg);
+    
 }
 a:focus {
     outline: dotted 2px #666;
 }
-#btn-explore .arrow-wrapper {
+#btn-login .arrow-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#btn-explore .arrow {
+#btn-login .arrow {
     margin-top: 1px;
     width: var(--arrow-width);
     background: var(--prim-color);
@@ -260,7 +129,7 @@ a:focus {
     transition: 0.2s;
 }
 
-#btn-explore .arrow::before {
+#btn-login .arrow::before {
     content: "";
     box-sizing: border-box;
     position: absolute;
@@ -274,16 +143,16 @@ a:focus {
     transform: rotate(-45deg);
 }
 
-#btn-explore:hover {
+#btn-login:hover {
     background-color: var(--primary-color);
     color: #e3ebde;
 }
 
-#btn-explore:hover .arrow {
+#btn-login:hover .arrow {
     background: var(--secondary-color);
 }
 
-#btn-explore:hover .arrow:before {
+#btn-login:hover .arrow:before {
     content: "";
     right: 0;
     border: 2px solid #fff;
@@ -291,67 +160,35 @@ a:focus {
     border-top: 0px;
 }
 
-/* ======================================= company card =======================================*/
-.card {
-    box-shadow: var(--shadow-lg);
-    border: none;
-    padding: 16px 0px;
-}
-
-.card .card-body {
+/* ======================================= form username password login register =======================================*/
+.hero .form{
+    justify-content: start;
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+.hero .form .username{
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 8px 28px;
-}
-
-.card .card-body .card-desc {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.card .card-body #btn-comp-card {
-    transition: all 0.3s;
-}
-.card .card-body #btn-comp-card:hover {
-    transform: scale(1.1);
-    background-color: var(--secondary-color);
-    transition: all 0.3s;
-}
-
-#background1 {
-    top: 0;
-    z-index: -1;
-    position: absolute;
-    height: 920px;
     width: 100%;
-    clip-path: polygon(0 0, 100% 0%, 100% 30%, 0% 80%);
-    background: radial-gradient(
-        90.7% 560.31% at 95.66% 11.65%,
-        #259f46 0%,
-        #c3f6d7 19.42%,
-        #c3f6d7 89.87%,
-        #a4e473 100%
-    );
 }
 
-#background2 {
-    top: 740px;
-    z-index: -1;
-    position: absolute;
-    height: 720px;
-    width: 100%;
-    clip-path: polygon(100% 100%, 0 100%, 0 70%, 100% 20%);
-    background: radial-gradient(
-        90.7% 560.31% at 95.66% 11.65%,
-        #259f46 0%,
-        #c3f6d7 19.42%,
-        #c3f6d7 89.87%,
-        #a4e473 100%
-    );
+#btn-login{
+    flex-direction: row;
+}
+
+.hero .form p a{
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.1s;
+}
+.hero .form p a:hover{
+    color: #A4E473;
+    transition: all 0.1s;
 }
 
 #nav-bg {
@@ -370,16 +207,18 @@ a:focus {
         /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
 }
 
+
+
 /* ======================================= template =======================================*/
 /* From uiverse.io by @satyamchaudharydev */
 /* removing default style of button */
 
-.form button {
+.form .usrpw button {
     border: none;
     background: none;
 }
 /* styling of whole input container */
-.form {
+.form .usrpw {
     font-family: "Inter";
     font-style: normal;
     font-weight: 700;
@@ -416,7 +255,7 @@ a:focus {
     border: none;
 }
 /* styling of animated border */
-.form:before {
+.form .usrpw:before {
     content: "";
     position: absolute;
     background: var(--border-color);
@@ -431,7 +270,7 @@ a:focus {
 }
 
 /* Hover on Input */
-.form:focus-within {
+.form .usrpw:focus-within {
     border-radius: var(--after-border-radius);
 }
 
@@ -439,7 +278,7 @@ input:focus {
     outline: none;
 }
 /* here is code of animated border */
-.form:focus-within:before {
+.form .usrpw:focus-within:before {
     transform: scale(1);
 }
 /* styling of close button */
